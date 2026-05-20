@@ -1,0 +1,92 @@
+version 3
+run MM1L_heavy-0-20260518-16:45:15-8645
+attr configname MM1L_heavy
+attr datetime 20260518-16:45:15
+attr datetimef 20260518-164515
+attr experiment MM1L_heavy
+attr inifile simulations/omnetpp.ini
+attr iterationvars ""
+attr iterationvarsd ""
+attr iterationvarsf ""
+attr measurement ""
+attr network MM1L
+attr processid 8645
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+config description "M/M/1/L: lambda=2.5, mu=3, L=10  (heavy load, rho=0.833)"
+config **.source.lambda 2.5
+config network MM1L
+config ned-path ../src
+config sim-time-limit 100000s
+config warmup-period 1000s
+config repeat 1
+config seed-set 0
+config result-dir results
+config num-rngs 2
+config **.scalar-recording true
+config **.vector-recording false
+config rng-class cMersenneTwister
+config **.server.capacity 10
+config **.server.mu 3.0
+
+par MM1L.source typename "\"Source\""
+par MM1L.source lambda 2.5
+scalar MM1L.source totalGenerated 250425
+par MM1L.server typename "\"Server\""
+par MM1L.server capacity 10
+par MM1L.server mu 3
+scalar MM1L.server totalArrived 247863
+scalar MM1L.server totalDropped 7883
+scalar MM1L.server totalServed 239982
+scalar MM1L.server lambda:eff 2.4240606060606
+scalar MM1L.server blocking:prob 0.031803859390066
+scalar MM1L.server waitingTimeGT0:mean 1.2900703234985
+scalar MM1L.server systemLength:mean 3.6094003275259
+attr checkSignals false
+attr recordingmode mean
+attr source systemLength
+attr title "system length, mean"
+scalar MM1L.server systemLength:timeavg 3.322921155941
+attr checkSignals false
+attr recordingmode timeavg
+attr source systemLength
+attr title "system length, timeavg"
+scalar MM1L.server utilisation:mean 0.83600178361167
+attr checkSignals false
+attr recordingmode mean
+attr source utilisation
+attr title "utilisation, mean"
+scalar MM1L.server utilisation:timeavg 0.80917483059553
+attr checkSignals false
+attr recordingmode timeavg
+attr source utilisation
+attr title "utilisation, timeavg"
+scalar MM1L.server queueLength:mean 3.0019219840789
+attr checkSignals false
+attr recordingmode mean
+attr source queueLength
+attr title "queue length, mean"
+scalar MM1L.server queueLength:timeavg 2.5137463253455
+attr checkSignals false
+attr recordingmode timeavg
+attr source queueLength
+attr title "queue length, timeavg"
+scalar MM1L.server waitingTime:mean 1.0370029950474
+attr checkSignals false
+attr recordingmode mean
+attr source waitingTime
+attr title "waiting time, mean"
+attr unit s
+par MM1L.sink typename "\"Sink\""
+scalar MM1L.sink totalReceived 242434
+scalar MM1L.sink responseTime:mean 1.3708097022282
+attr checkSignals false
+attr recordingmode mean
+attr source responseTime
+attr title "response time, mean"
+attr unit s
+par MM1L typename "\"MM1L\""
+
