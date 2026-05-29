@@ -1,0 +1,53 @@
+version 3
+run MMC2Sweep-2-20260522-18:15:59-5987
+attr configname MMC2Sweep
+attr datetime 20260522-18:15:59
+attr datetimef 20260522-181559
+attr experiment MMC2Sweep
+attr inifile omnetpp.ini
+attr iterationvars $meanIaT=0.83333333s
+attr iterationvarsd meanIaT=0.83333333s
+attr iterationvarsf meanIaT=0.83333333s-
+attr measurement $meanIaT=0.83333333s
+attr network mmclqueueingsimulation.MMCLNetwork
+attr processid 5987
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 2
+attr seedset 2
+itervar meanIaT 0.83333333s
+config description "M/M/2/8 across a range of arrival rates"
+config **.queueingSystem.numberOfServers 2
+config **.arrivalEventGenerator.meanInterArrivalTime 0.83333333s
+config network mmclqueueingsimulation.MMCLNetwork
+config sim-time-limit 500000s
+config warmup-period 50000s
+config result-dir results
+config **.queueingSystem.meanServiceTime 1s
+config **.queueingSystem.maxSystemCapacity 8
+
+par MMCLNetwork.arrivalEventGenerator typename "\"mmclqueueingsimulation.ArrivalEventGenerator\""
+par MMCLNetwork.arrivalEventGenerator meanInterArrivalTime 0.83333333s
+attr unit s
+par MMCLNetwork.queueingSystem typename "\"mmclqueueingsimulation.QueueingSystemMMCL\""
+par MMCLNetwork.queueingSystem numberOfServers 2
+par MMCLNetwork.queueingSystem maxSystemCapacity 8
+par MMCLNetwork.queueingSystem meanServiceTime 1s
+attr unit s
+scalar MMCLNetwork.queueingSystem meanQueueLength_Lq 0.5777980406097389
+scalar MMCLNetwork.queueingSystem throughput 1.1925577777777778
+scalar MMCLNetwork.queueingSystem utilizationPerServer_rho 0.595330509583831
+scalar MMCLNetwork.queueingSystem averageWaitingTime_Wq 0.48450408697360503
+scalar MMCLNetwork.queueingSystem averageWaitingTimeOfWaiters_WqGivenWait 1.103327767131258
+scalar MMCLNetwork.queueingSystem responseTime_W 1.484504086973605
+scalar MMCLNetwork.queueingSystem blockingProbability_PL 0.008669164154400898
+scalar MMCLNetwork.queueingSystem totalArrivals 541344
+scalar MMCLNetwork.queueingSystem acceptedArrivals 536651
+scalar MMCLNetwork.queueingSystem arrivalsRejected 4693
+scalar MMCLNetwork.queueingSystem customersUsedInWaitStats 536650
+scalar MMCLNetwork.queueingSystem measurementWindowSeconds 450000
+par MMCLNetwork.departureCollector typename "\"mmclqueueingsimulation.DepartureCollector\""
+scalar MMCLNetwork.departureCollector totalDepartures 595894
+par MMCLNetwork typename "\"mmclqueueingsimulation.MMCLNetwork\""
+
